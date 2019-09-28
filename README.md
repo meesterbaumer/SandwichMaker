@@ -5,6 +5,7 @@ Use this application to select sandwich toppings and price out your order.
 
 ## Screenshots
 
+![Pizza Maker Preview](https://raw.githubusercontent.com/meesterbaumer/SandwichMaker/master/ScreenShots/MainView.png)
 
 ## How To Run
 * Clone down this project
