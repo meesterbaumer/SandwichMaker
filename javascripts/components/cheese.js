@@ -4,23 +4,23 @@ const cheeses =
 [
     {
         id: "cheese1", 
-        name: "Cheedar", 
-        price: 50 
+        name: "Cheddar", 
+        price: 70
     },
     {
         id: "cheese2", 
         name: "Provolone", 
-        price: 70 
+        price: 60 
     },
     {
         id: "cheese3", 
         name: "Mozzarella", 
-        price: 30 
+        price: 50 
     },
     {
         id: "cheese4", 
         name: "Swiss", 
-        price: 10 
+        price: 40 
     },
 
 ];
@@ -31,7 +31,7 @@ const printCheeseOptions = () => {
         domString +=
         `
         <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="${cheeses[i].id}>
+        <input type="checkbox" class="form-check-input cheese" id="${cheeses[i].id}>
         <label class="form-check-label" for=${cheeses[i].id}>${cheeses[i].name}</label>
         </div>
         `;
@@ -40,4 +40,17 @@ const printCheeseOptions = () => {
     utilities.printToDom('cheese', domString);
 };
 
-export default { printCheeseOptions };
+const getSelectedCheese = () => {
+    const selectedCheese = [];
+    const cheeseOptions = document.getElementsByClassName('cheese');
+    for (let j=0; j<cheeseOptions.length; j++) {
+        for (let k=0; k<cheeses.length; k++) {
+            if (cheeseOptions[j].checked === true && cheeseOptions[j].id === cheeses[k].id) {
+                selectedCheese.push(cheeses[k]);
+            }
+        }
+    }
+    return selectedCheese;
+};
+
+export default { getSelectedCheese, printCheeseOptions };

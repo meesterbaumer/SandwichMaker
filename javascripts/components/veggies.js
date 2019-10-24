@@ -4,33 +4,33 @@ const veggies =
 [
     {
         id: "veggies1", 
-        name: "Mayo", 
-        price: 50 
+        name: "Lettuce", 
+        price: 25 
     },
     {
         id: "veggies2", 
-        name: "Mustard", 
-        price: 70 
+        name: "Pickles", 
+        price: 40 
     },
     {
         id: "veggies3", 
-        name: "Ranch", 
-        price: 30 
+        name: "Banana Peppers", 
+        price: 66 
     },
     {
         id: "veggies4", 
-        name: "Honey", 
-        price: 10 
+        name: "Jalapeno Peppers", 
+        price: 35 
     },
     {
         id: "veggies5", 
-        name: "Mustard", 
-        price: 10 
+        name: "Anchovies", 
+        price: 100 
     },
     {
         id: "veggies6", 
-        name: "Chipotle Ranch", 
-        price: 10 
+        name: "Onions", 
+        price: 75 
     },
    
 ];
@@ -41,7 +41,7 @@ const printVeggieOptions = () => {
         domString +=
         `
         <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="${veggies[i].id}>
+        <input type="checkbox" class="form-check-input veggies" id="${veggies[i].id}>
         <label class="form-check-label" for=${veggies[i].id}>${veggies[i].name}</label>
         </div>
         `;
@@ -50,4 +50,17 @@ const printVeggieOptions = () => {
     utilities.printToDom('veggies', domString);
 };
 
-export default { printVeggieOptions };
+const getSelectedVeggies = () => {
+    const selectedVeggie = [];
+    const veggieOptions = document.getElementsByClassName('veggies');
+    for (let j=0; j<veggieOptions.length; j++) {
+        for (let k=0; k<veggies.length; k++) {
+            if (veggieOptions[j].checked === true && veggieOptions[j].id === veggies[k].id) {
+                selectedVeggie.push(veggies[k]);
+            }
+        }
+    }
+    return selectedVeggie;
+};
+
+export default { getSelectedVeggies, printVeggieOptions };

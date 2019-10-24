@@ -5,17 +5,17 @@ const condiments =
     {
         id: "condiments1", 
         name: "Mayo", 
-        price: 50 
+        price: 25 
     },
     {
         id: "condiments2", 
         name: "Mustard", 
-        price: 70 
+        price: 65 
     },
     {
         id: "condiments3", 
         name: "Ranch", 
-        price: 30 
+        price: 15 
     },
     {
         id: "condiments4", 
@@ -24,13 +24,13 @@ const condiments =
     },
     {
         id: "condiments5", 
-        name: "Mustard", 
-        price: 10 
+        name: "Honey Mustard", 
+        price: 35 
     },
     {
         id: "condiments6", 
         name: "Chipotle Ranch", 
-        price: 10 
+        price: 75 
     },
    
 ];
@@ -41,7 +41,7 @@ const printCondimentOptions = () => {
         domString +=
         `
         <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="${condiments[i].id}>
+        <input type="checkbox" class="form-check-input condiments" id="${condiments[i].id}>
         <label class="form-check-label" for=${condiments[i].id}>${condiments[i].name}</label>
         </div>
         `;
@@ -50,4 +50,17 @@ const printCondimentOptions = () => {
     utilities.printToDom('condiments', domString);
 };
 
-export default { printCondimentOptions };
+const getSelectedCondiments = () => {
+    const selectedCondiments = [];
+    const condimentOptions = document.getElementsByClassName('condiments');
+    for (let j=0; j<condimentOptions.length; j++) {
+        for (let k=0; k<condiments.length; k++) {
+            if (condimentOptions[j].checked === true && condimentOptions[j].id === condiments[k].id) {
+                selectedCondiments.push(condiments[k]);
+            }
+        }
+    }
+    return selectedCondiments;
+};
+
+export default { getSelectedCondiments, printCondimentOptions };
