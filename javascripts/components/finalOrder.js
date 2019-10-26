@@ -1,9 +1,9 @@
-import bread from '../components/bread';
-import meat from '../components/meat';
-import cheese from '../components/cheese';
-import condiments from '../components/condiments';
-import veggies from '../components/veggies';
-import utilities from '../helpers/utilities'
+import bread from './bread.js';
+import meat from './meat.js';
+import cheese from './cheese.js';
+import condiments from './condiments.js';
+import veggies from './veggies.js';
+import utilities from '../helpers/utilities.js'
 
 const reducer = (accumulator, currentValue) => {
   return accumulator + currentValue;
@@ -37,10 +37,10 @@ const createOrder = () => {
   let selectedToppings = '';
 
   const breadChoice = bread.getSelectedBread();
-  const meatChoice = meat.getSelectedMeat();
+  const meatChoice = meat.getSelectedMeats();
   const cheeseChoice = cheese.getSelectedCheese();
-  const condimentChoice = condiments.getSelectedCondiment();
-  const veggieChoice = veggies.getSelectedVeggie();
+  const condimentChoice = condiments.getSelectedCondiments();
+  const veggieChoice = veggies.getSelectedVeggies();
 
   selectedToppings = breadChoice.concat(meatChoice, cheeseChoice, condimentChoice, veggieChoice);
 
