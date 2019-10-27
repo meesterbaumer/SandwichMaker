@@ -9,6 +9,7 @@ const reducer = (accumulator, currentValue) => {
   return accumulator + currentValue;
 }
 
+
 const FinalOrder = (items) => {
   let domString = '';
   let prices = [];
@@ -16,14 +17,14 @@ const FinalOrder = (items) => {
     prices.push(items[i].price);
     domString += `
     <div class="toppings">
-    <div class="row">
-    <div class="col d-flex justify-content-start">
-    <p>${items[i].name}</p>
-    </div>
-    <div class="col d-flex justify-content-end">
-    <p>$${((items[i].price)/100).toFixed(2)}</p>
-    </div>
-    </div>
+      <div class="row">
+        <div class="col d-flex justify-content-start">
+          <p>${items[i].name}</p>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <p>$${((items[i].price)/100).toFixed(2)}</p>
+        </div>
+      </div>
     </div>
     `
   }

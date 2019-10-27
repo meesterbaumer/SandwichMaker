@@ -31,7 +31,7 @@ const printCheeseOptions = () => {
         domString +=
         `
         <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input cheese" id="${cheeses[i].id}>
+        <input type="checkbox" class="form-check-input cheese" id="${cheeses[i].id}">
         <label class="form-check-label" for=${cheeses[i].id}>${cheeses[i].name}</label>
         </div>
         `;
