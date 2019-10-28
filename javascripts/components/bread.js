@@ -17,6 +17,11 @@ const breads =
         name: "Sourdough", 
         price: 175
     },
+    {
+        id: "bread4", 
+        name: "Gluten Free", 
+        price: 500
+    },
 
 ];
 

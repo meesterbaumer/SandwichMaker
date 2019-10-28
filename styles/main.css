@@ -6,12 +6,6 @@ body {
     margin: 10px;
 }
 
-.choicesContainer {
-    border: solid 5px;
-    background-color: coral;
-    justify-content: center;
-}
-
 h1 {
     text-align: center;
 }
@@ -19,4 +13,19 @@ h1 {
 .sandwich-options {
     border: solid 1px;
     padding: 10px;
+}
+.order {
+    display: flex;
+    justify-content: center;
+}
+
+.choicesContainer {
+    border: solid 5px;
+    background-color: coral;
+    justify-content: center;
+    margin: 20px !important;
+}
+
+.final-order {
+    width: 150px;
 }
