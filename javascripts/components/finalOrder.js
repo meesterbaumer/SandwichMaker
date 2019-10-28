@@ -50,7 +50,7 @@ const createOrder = () => {
 };
 
 const printOrderButton = () => {
-  const domString2 = '<div class="order-button"><button id="orderButton" class="row btn btn-outline-success">Place Order</button></div>';
+  const domString2 = '<button id="orderButton" class="row btn btn-outline-success order-button">Place Order</button>';
   utilities.printToDom('final-order', domString2);
   document.getElementById('orderButton').addEventListener('click', createOrder);
 };
